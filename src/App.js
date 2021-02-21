@@ -1,22 +1,18 @@
-// import logo from './logo.svg';
-// import './App.css';
+import React from 'react'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import { Route, Switch } from 'react-router-dom'
 
-import MainLayout from "./layouts/MainLayout";
-
-function App() {
+const App = () => {
   return (
-    <MainLayout>
-    <div className="container">
-      <h1>Home Page</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Soluta aliquid maiores id odit ea quibusdam nulla beatae commodi,
-          est nihil illum perferendis ex esse exercitationem quidem quas quis
-          fuga recusandae.
-        </p>
-    </div>
-  </MainLayout>
-  );
+    // <Home />
+    <Switch>
+      <Route path="/" exact={true} component={Home}/>
+      <Route path="/about" component={About}/>
+      <Route path="/contact" component={Contact}/>
+    </Switch>
+  )
 }
 
-export default App;
+export default App
